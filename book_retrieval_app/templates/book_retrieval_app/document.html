@@ -1,0 +1,13 @@
+{% extends 'book_retrieval_app/base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">{{ title }}</h1>
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm">{{ content }}</pre>
+    </div>
+    <div class="text-center">
+        <a href="{% url 'search' %}?query={{ request.GET.query }}" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">Back to Search Results</a>
+    </div>
+</div>
+{% endblock %}
